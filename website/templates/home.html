@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="../static/home.css">
+</head>
+<body>
+    <div class="containerGeral">
+        <div class="conteudoForm">
+            <form method="POST">
+               <h1>Tela de Login</h1>
+                    <label for="Nome">Nome</label>
+                    <span id="nome-input"><input type="Nome" class="conteudoForm" id="nomeCadastro" name="nomeCadastro" placeholder="Digite seu Nome"></span>
+                    <br>
+                    <label for="Senha">Senha</label>
+                    <span id="senha-input"><input type="Senha" id="senha" name="senha" class="conteudoForm" placeholder="Digite sua Senha"></span>
+                    <br>
+                    <br>
+                    <br>
+                    <button id="btn-login"><a href="{{url_for('auth.musicas')}}">Cadastrar</a></button>
+        
+            </div>
+            </form>
+        </div>
+    
+</body>
+</html>
