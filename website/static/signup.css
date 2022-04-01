@@ -1,0 +1,38 @@
+
+
+.botao{
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    width: 250px;
+    border-radius: 15px;
+    
+}
+
+
+.formulario{
+    max-width: 100vw;
+    max-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    background-color: white
+}
+.formulario-conteudo{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    background-color: white
+    
+
+}
+
+.form-group>input{
+    width: 50vw;
+}

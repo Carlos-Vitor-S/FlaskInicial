@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de Login</title>
+    <title>Página Principal</title>
     <link rel="stylesheet" href="../static/home.css">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    crossorigin="anonymous"
+    />
+ 
 </head>
 <body>
-    <div class="containerGeral">
-        <div class="conteudoForm">
-            <form method="POST">
-               <h1>Tela de Login</h1>
-                    <label for="Nome">Nome</label>
-                    <span id="nome-input"><input type="Nome" class="conteudoForm" id="nomeCadastro" name="nomeCadastro" placeholder="Digite seu Nome"></span>
-                    <br>
-                    <label for="Senha">Senha</label>
-                    <span id="senha-input"><input type="Senha" id="senha" name="senha" class="conteudoForm" placeholder="Digite sua Senha"></span>
-                    <br>
-                    <br>
-                    <br>
-                    <button id="btn-login"><a href="{{url_for('auth.musicas')}}">Cadastrar</a></button>
+    <div id="imagemFundoHome" >
         
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Passageiros <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Motoristas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Veiculos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Transporte</a>
+                  </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="#">Relatorios</a>
+                </li>
+              </ul>
             </div>
-            </form>
+          </nav>
+        <div id="tituloHome">
+            <span id="backgroundTitulo">
+                <h1>Bem Vindo a Home de Serviços</h1>
+            </span>
         </div>
-    
+    </div>
+
 </body>
 </html>

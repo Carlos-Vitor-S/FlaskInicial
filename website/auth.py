@@ -1,27 +1,54 @@
-
-
-
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request , flash , redirect
 from flask import request
 
 auth = Blueprint('auth',__name__)
 
-@auth.route('/login' , methods=['GET', 'POST'])
+@auth.route('/', methods=['GET','POST'])
 def login():
-    dados = request.form
-    print(dados)
-    return render_template("home.html")
-
-@auth.route('/logout')
-def logout():
-    return "<p> pagina de logout</p>"
-
-@auth.route('/sign-up')
-
-def signup():
-    return "<p> pagina de signup </p>"
-
-@auth.route('/musicas/' , methods = ['GET'])
-def musicas ():
     
-    return render_template("play.html")
+    return render_template("login.html")
+
+@auth.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.form == 'POST':
+        nome = request.form.get('nome')
+        cpf = request.form.get('cpf')
+        endereco = request.form.get('endereco')
+        nascimento = request.form.get('nascimento')
+        senha1 = request.form.get('senha1')
+        senha2 = request.form.get('senha2')
+        
+        if len(cpf) != 11:
+            flash("Cpf deve conter 11 digitos",category='error')
+        elif senha2 != senha1:
+            flash("As senhas digitadas não sao iguais", category='error')
+        else:
+            flash("Cadastro feito com sucesso" , category='success')
+           
+    return render_template('signup.html')
+
+@auth.route('/passageiros/', methods=['GET','POST'])
+def passageiros():
+    return render_template('passageiros.html')
+
+
+@auth.route('/motoristas/', methods=['GET','POST'])
+def motoristas():
+    return render_template('motoristas.html')
+
+
+@auth.route('/veiculos/', methods=['GET','POST'])
+def veiculos():
+
+    return render_template('veiculos.html')
+
+@auth.route('/transporte/', methods=['GET','POST'])
+def transporte():
+
+    return render_template('transporte.html')
+
+@auth.route('/relatorios/', methods=['GET','POST'])
+def relatorios():
+
+    return render_template('relatorios.html')
+
