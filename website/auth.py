@@ -31,6 +31,7 @@ def login():
             #return render_template("home.html")
         return render_template('login.html', error=error) '''
 
+
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.form == 'POST':
@@ -65,8 +66,8 @@ def veiculos():
 
     return render_template('veiculos.html')
 
-@auth.route('/transporte/', methods=['GET','POST'])
-def transporte():
+@auth.route('/transportes/', methods=['GET','POST'])
+def transportes():
 
     return render_template('transporte.html')
 
