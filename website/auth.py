@@ -39,13 +39,13 @@ def motoristas():
 
 @auth.route('/veiculos/', methods=['GET','POST'])
 def veiculos():
-
+    
     return render_template('veiculos.html')
 
-@auth.route('/transporte/', methods=['GET','POST'])
-def transporte():
+@auth.route('/transportes/', methods=['GET','POST'])
+def transportes():
 
-    return render_template('transporte.html')
+    return render_template('transportes.html')
 
 @auth.route('/relatorios/', methods=['GET','POST'])
 def relatorios():
