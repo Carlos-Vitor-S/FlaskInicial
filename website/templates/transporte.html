@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transportes</title>
+    <link rel="stylesheet" href="../static/signup.css">
     <link
     rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -43,9 +44,74 @@
           </ul>
         </div>
       </nav>
-      <ul>
-          <li>Cadastrar Transporte</li>
-          <li>Exibir Transporte (Beta)</li>
-      </ul>
+      <br>
+  {% block content %}
+
+  <div class="formulario">
+    <form method="POST">
+      <h3 align="center">Cadastrar Veiculos</h3>
+      
+      <div class="formulario-conteudo">
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+        {% if messages %} 
+          {% for category, message in messages %} {% if category == 'error' %}
+            <span>{{ message }}</span>
+        
+          {% else %}
+          
+            <span>{{ message }}</span>
+         
+          {% endif %} {% endfor %} {% endif %} {% endwith %}
+      
+        <div class="form-group">
+            <label for="dataTransporte">Data do Transporte</label>
+            <input
+              type="date"
+              class="form-control"
+              id="dataTransporte"
+              name="dataTransporte"
+              placeholder="Data do transporte"
+            />
+        </div>
+
+        <div class="form-group">
+          <label for="horaTransporte">Hora do Transporte</label>
+          <input
+            type="texts"
+            class="form-control"
+            id="horaTransporte"
+            name="horaTransporte"
+            placeholder="Hora do transporte"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="km">Quantidade de KM</label>
+          <input
+            type="number"
+            class="form-control"
+            id="km"
+            name="km"
+            placeholder="Quantidade de KM"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="valorCobrado">Valor Cobrado</label>
+          <input
+            type="text"
+            class="form-control"
+            id="valorCobrado"
+            name="valorCobrado"
+            placeholder="Valor cobrado"
+          />
+        </div>
+    
+      </div>
+      <br />
+      <div class="botao"><button type="submit" class="btn btn-primary">Cadastrar</button></div>
+    </form>
+  </div>
+  {% endblock %}
 </body>
 </html>
