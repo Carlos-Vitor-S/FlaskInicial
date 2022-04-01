@@ -5,8 +5,31 @@ auth = Blueprint('auth',__name__)
 
 @auth.route('/', methods=['GET','POST'])
 def login():
-    
-    return render_template("login.html")
+    error = None
+    if request.method == 'POST':
+        if request.form['cpf'] == '99999999999' and request.form['senha'] == 'admin':
+            return redirect(url_for('views.home'))
+            
+        else:
+            flash('Dados invalidos')
+            
+    return render_template('login.html', error=error)
+    '''
+    metodo = request.method
+    if metodo == 'POST':
+        cpf = request.form['cpf']
+        senha = request.form['senha']
+        if cpf == '99999999999' and senha == 'admin':
+            return render_template('home.html')
+        else:
+            return error == 'false'
+    else:
+    #senha = request.form['senha']
+    #cpf = request.form['cpf']
+    #if request.method == 'POST':
+        #if senha == 'admin' and cpf == '99999999999':
+            #return render_template("home.html")
+        return render_template('login.html', error=error) '''
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
