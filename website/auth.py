@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request , flash , redirect
+from flask import Blueprint, render_template, request , flash , redirect, url_for
 from flask import request
 
 auth = Blueprint('auth',__name__)
@@ -7,6 +7,7 @@ auth = Blueprint('auth',__name__)
 def login():
     
     return render_template("login.html")
+
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -39,13 +40,13 @@ def motoristas():
 
 @auth.route('/veiculos/', methods=['GET','POST'])
 def veiculos():
-    
+
     return render_template('veiculos.html')
 
 @auth.route('/transportes/', methods=['GET','POST'])
 def transportes():
 
-    return render_template('transportes.html')
+    return render_template('transporte.html')
 
 @auth.route('/relatorios/', methods=['GET','POST'])
 def relatorios():
